@@ -1,17 +1,14 @@
-import express from 'express';
-import { User } from '../../models/schemas/user';
-import { createUser } from '../../controllers/user';
+import express, { Router } from 'express';
+import { createUserController } from '../../controllers/user/create-users';
+import { getAllUsersController } from '../../controllers/user/get-users';
+import { authenticateUserController } from '../../controllers/user/authenticate-user';
 
-const router = express.Router();
+const router: Router = express.Router();
 
-router.post('/', async (req, res) => {
-  const user = await createUser(req.body);
-  res.status(201).send(user);
-});
+router.post('/', createUserController);
 
-router.get('/', async (req, res) => {
-  const users = await User.find().populate('posts').populate('likes');
-  res.send(users);
-});
+router.get('/', getAllUsersController);
+
+router.post('/authenticate', authenticateUserController);
 
 export default router;
