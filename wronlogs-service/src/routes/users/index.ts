@@ -1,12 +1,11 @@
 import express from 'express';
 import { User } from '../../models/schemas/user';
-
+import { createUser } from '../../controllers/user';
 
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-  const user = new User(req.body);
-  await user.save();
+  const user = await createUser(req.body);
   res.status(201).send(user);
 });
 
