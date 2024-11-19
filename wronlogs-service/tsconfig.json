@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          // Specify ECMAScript target version
+    "module": "commonjs",                     // Specify module code generation
+    "strict": true,                           // Enable all strict type-checking options
+    "esModuleInterop": true,                  // Enable esModuleInterop
+    "skipLibCheck": true,                     // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
+    "outDir": "./dist",                       // Redirect output structure to the directory
+    "rootDir": "./src",                       // Specify the root directory of input files
+    "typeRoots": ["./node_modules/@types"],   // List of folders to include type definitions from
+  },
+  "include": [
+    "src/**/*",
+    "node_modules/@types/**/*"
+  ],
+  "exclude": ["node_modules"]                 // Exclude the node_modules directory
+}
