@@ -8,7 +8,6 @@ if (!mongoUri) {
   throw new Error('MONGODB_URI is not defined in the environment variables');
 }
 
-export const mongooseInstance = mongoose.connect(mongoUri)
-  .catch(err => {
-    console.error('Failed to connect to MongoDB', err);
-  });
+export const mongooseInstance = mongoose.connect(mongoUri).catch((err) => {
+  console.error('Failed to connect to MongoDB', err);
+});

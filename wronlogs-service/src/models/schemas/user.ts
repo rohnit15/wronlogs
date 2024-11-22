@@ -7,7 +7,7 @@ export const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   role: { type: String, enum: ['basic', 'author', 'admin'], default: 'basic' },
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
-  likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }]
+  likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
 });
 
 export const User = mongoose.model('User', userSchema);

@@ -13,11 +13,13 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-mongooseInstance.then(() => {
-  console.log('Connected to MongoDB');
-}).catch(err => {
-  console.error('Failed to connect to MongoDB', err);
-});
+mongooseInstance
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((err) => {
+    console.error('Failed to connect to MongoDB', err);
+  });
 
 app.use('/posts', postRoutes);
 app.use('/users', userRoutes);
@@ -36,7 +38,9 @@ const gracefulShutdown = () => {
 
   // Force close server after 10 seconds
   setTimeout(() => {
-    console.error('Could not close connections in time, forcefully shutting down');
+    console.error(
+      'Could not close connections in time, forcefully shutting down',
+    );
     process.exit(1);
   }, 10000);
 };

@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { getPosts } from "@/services/post";
+import { Request, Response } from 'express';
+import { getPosts } from '@/services/post';
 
 export const getPostsController = async (req: Request, res: Response) => {
   const posts = await getPosts();

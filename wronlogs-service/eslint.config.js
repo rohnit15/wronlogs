@@ -1,5 +1,9 @@
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
 import typescriptEslintParser from '@typescript-eslint/parser';
+import eslintRecommended from 'eslint-config-eslint';
+import importPlugin from 'eslint-plugin-import';
+import sortKeysFixPlugin from 'eslint-plugin-sort-keys-fix';
+import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
   {
@@ -13,10 +17,14 @@ export default [
     },
     plugins: {
       '@typescript-eslint': typescriptEslintPlugin,
+      import: importPlugin,
+      'sort-keys-fix': sortKeysFixPlugin,
+      prettier: prettierPlugin,
     },
     rules: {
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single'],
+      ...eslintRecommended.rules,
+      semi: ['error', 'always'],
+      quotes: ['error', 'single'],
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
@@ -33,6 +41,7 @@ export default [
           maxBOF: 0,
         },
       ],
+      'prettier/prettier': ['error', { singleQuote: true }],
     },
   },
 ];

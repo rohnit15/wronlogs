@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Backend service for WronLogs",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
     "start": "nodemon src/index.ts",
     "lint": "eslint --config eslint.config.js .",
@@ -29,11 +30,14 @@
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "eslint-config-eslint": "^8.0.0"
   },
   "_moduleAliases": {
     "@": "src",
@@ -41,7 +45,10 @@
     "@controllers": "src/controllers",
     "@routes": "src/routes"
   },
-  "prettier": {
-    "semi": true
+  "prettier": "./prettier.config.cjs",
+  "eslintConfig": {
+    "extends": [
+      "plugin:prettier/recommended"
+    ]
   }
 }
