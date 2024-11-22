@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
-import { authenticateUser } from '../../services/user';
 import jwt from 'jsonwebtoken';
+
+import { authenticateUser } from '../../services/user';
 
 export const authenticateUserController = async (
   req: Request,

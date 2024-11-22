@@ -1,5 +1,7 @@
 import { Response } from 'express';
+
 import { CreatePostRequest } from './index.types';
+
 import { createPost } from '@/services/post';
 
 export const createPostController = async (

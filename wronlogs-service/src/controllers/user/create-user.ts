@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+
 import { createUser } from '@/services/user';
 
 export const createUserController = async (

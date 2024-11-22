@@ -1,5 +1,6 @@
-import { User } from '@/models/schemas/user';
 import bcrypt from 'bcrypt';
+
+import { User } from '@/models/schemas/user';
 
 export const getAllUsers = async (): Promise<InstanceType<typeof User>[]> => {
   return await User.find().populate('posts').populate('likes');

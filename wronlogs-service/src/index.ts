@@ -1,10 +1,11 @@
 import 'module-alias/register';
-import express from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+import express from 'express';
+
 import { mongooseInstance } from '@/models';
 import postRoutes from '@/routes/post';
 import userRoutes from '@/routes/user';
-import dotenv from 'dotenv';
 
 dotenv.config();
 

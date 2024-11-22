@@ -1,7 +1,9 @@
-import { User } from '@/models/schemas/user';
-import { UserBody } from './index.types';
 import bcrypt from 'bcrypt';
+
+import { UserBody } from './index.types';
 import { isEmailValid } from './util';
+
+import { User } from '@/models/schemas/user';
 
 export const createUser = async (
   body: UserBody,

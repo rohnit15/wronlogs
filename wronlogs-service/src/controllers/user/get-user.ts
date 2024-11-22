@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+
 import { getAllUsers, getUserById } from '@/services/user';
 
 export const getAllUsersController = async (
