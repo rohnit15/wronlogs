@@ -9,11 +9,13 @@
     "outDir": "./dist",
     "noEmit": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
+      "@/*": ["src/*"],
       "@models/*": ["src/models/*"],
       "@controllers/*": ["src/controllers/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"]
     }
   },
   "include": ["src/**/*.ts"],

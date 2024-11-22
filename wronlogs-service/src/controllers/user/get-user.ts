@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getAllUsers, getUserById } from '../../services/user';
+import { getAllUsers, getUserById } from '@/services/user';
 
 export const getAllUsersController = async (req: Request, res: Response): Promise<void> => {
     const userId = req.query.id as string;

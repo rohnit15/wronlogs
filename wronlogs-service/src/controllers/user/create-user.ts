@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createUser } from '../../services/user';
+import { createUser } from '@/services/user';
 
 export const createUserController = async (req: Request, res: Response): Promise<void> => {
     const { username, name, emailId, password } = req.body;
