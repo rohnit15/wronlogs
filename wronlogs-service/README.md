@@ -5,6 +5,7 @@ A simple backend service to handle everything wronlogs
 ## Installation
 
 1. Create a `.env` file in the root directory and add your environment variables.
+2. Make sure you have a mongo server running with an admin account. You can use the sample `.env` file to replace the username and password to plugin the DB.
 
 ## Usage
 
