@@ -1,5 +1,6 @@
 import 'module-alias/register';
 import bodyParser from 'body-parser';
+import cors from 'cors'; // Import the cors middleware
 import dotenv from 'dotenv';
 import express from 'express';
 
@@ -15,6 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS for all routes
 
 mongooseInstance
   .then(() => {
