@@ -12,7 +12,7 @@ export const createPost = async (postData: any) => {
     console.log("token =>", token);
     if (!token) throw new Error('No token found');
 
-    const response = await axios.post(`${API_URL}/post`, postData, {
+    const response = await axios.post(`${API_URL}/posts`, postData, {
       headers: {
         usertoken: token,
       },

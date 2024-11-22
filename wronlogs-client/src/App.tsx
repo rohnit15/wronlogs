@@ -17,7 +17,7 @@ function App() {
 
   const handleCreatePost = async () => {
     try {
-      const postData = { title: 'New Post', content: 'This is a new post.' };
+      const postData = { title: 'New Post', body: 'This is a new post.' };
       const response = await createPost(postData);
       console.log('Post created:', response);
     } catch (error) {
