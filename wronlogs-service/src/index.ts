@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import express from 'express';
 
+import swaggerRouter from './swagger';
+
 import { mongooseInstance } from '@/models';
 import postRoutes from '@/routes/post';
 import userRoutes from '@/routes/user';
@@ -24,6 +26,7 @@ mongooseInstance
 
 app.use('/posts', postRoutes);
 app.use('/users', userRoutes);
+app.use(swaggerRouter);
 
 const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
