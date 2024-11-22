@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 import { User } from '@/models/schemas/user';
 
@@ -31,4 +32,16 @@ export const authenticateUser = async (
   }
   console.log('User authenticated successfully');
   return user;
+};
+
+export const getUserByToken = async (
+  token: string,
+): Promise<InstanceType<typeof User> | null> => {
+  try {
+    const decoded = jwt.verify(token, 'your_secret_key') as { id: string };
+    return await User.findById(decoded.id).populate('posts').populate('likes');
+  } catch (error) {
+    console.error('Error verifying token:', error);
+    return null;
+  }
 };

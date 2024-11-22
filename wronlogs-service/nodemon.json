@@ -1,0 +1,4 @@
+{
+  "watch": ["src", "frontend"],
+  "ext": "ts,tsx,js,jsx,json"
+}
